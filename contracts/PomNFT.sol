@@ -78,6 +78,7 @@ contract PomNFT is ERC721URIStorage {
         uint256 rand = random(
             string(abi.encodePacked("THIRD_WORD", Strings.toString(tokenId)))
         );
+
         rand = rand % thirdWords.length;
         return thirdWords[rand];
     }
