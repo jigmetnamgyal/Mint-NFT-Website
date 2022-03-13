@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JigmeT123/Mint-NFT-Website/issues"
   },
-  "homepage": "https://github.com/JigmeT123/Mint-NFT-Website#readme"
+  "homepage": "https://github.com/JigmeT123/Mint-NFT-Website#readme",
+  "devDependencies": {
+    "hardhat": "^2.9.1"
+  }
 }
