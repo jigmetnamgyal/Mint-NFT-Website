@@ -1,0 +1,20 @@
+{
+  "name": "mint-nft-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JigmeT123/Mint-NFT-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JigmeT123/Mint-NFT-Website/issues"
+  },
+  "homepage": "https://github.com/JigmeT123/Mint-NFT-Website#readme"
+}
