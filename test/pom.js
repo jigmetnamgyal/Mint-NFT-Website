@@ -15,10 +15,6 @@ describe("PomNFT Contract", function () {
 		"Hello",
 	];
 
-	let secondWords = ["World", "Awesome", "Pistol", "Japan", "Saw", "See"];
-
-	let thirdWords = ["Pencil", "BMW", "Lambo", "Zenitsu", "Word", "Coke"];
-
 	beforeEach(async function () {
 		[owner, user] = await ethers.getSigners();
 		TestContract = await ethers.getContractFactory("PomNFT");
@@ -27,8 +23,7 @@ describe("PomNFT Contract", function () {
 
 	describe("Deployment", async function () {
 		it("should have the correct owner", async function () {
-            console.log('Owner address: ', owner.address)
-            await expect(Contract.owner()).to.equal(owner.address)
+            expect(await Contract.owner()).to.equal(owner.address)
         });
 	});
 
@@ -43,7 +38,14 @@ describe("PomNFT Contract", function () {
 	});
 
 	describe("Mint an Epic NFT", async function () {
-		it("asfasf", async function () {
+		it("Correct balance after minting", async function () {
+            const initialBalance = await Contract.balanceOf(owner.address)
+            expect(initialBalance.toString()).to.equal("0")
+
+            await Contract.makeAnEpicNFT();
+
+            const finalBalance = await Contract.balanceOf(owner.address)
+            expect(finalBalance.toString()).to.equal("1")
 		});
 	});
 });
