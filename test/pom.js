@@ -23,12 +23,12 @@ describe("PomNFT Contract", function () {
 
 	describe("Deployment", async function () {
 		it("should have the correct owner", async function () {
-            expect(await Contract.owner()).to.equal(owner.address)
-        });
+			expect(await Contract.owner()).to.equal(owner.address);
+		});
 	});
 
 	describe("Random number", async function () {
-		it("returns a random number", async function () {
+		it("returns true if the word exist in an array", async function () {
 			const presentInArray = firstWords.includes(
 				await Contract.pickRandomFirstWord(1)
 			);
@@ -39,13 +39,13 @@ describe("PomNFT Contract", function () {
 
 	describe("Mint an Epic NFT", async function () {
 		it("Correct balance after minting", async function () {
-            const initialBalance = await Contract.balanceOf(owner.address)
-            expect(initialBalance.toString()).to.equal("0")
+			const initialBalance = await Contract.balanceOf(owner.address);
+			expect(initialBalance.toString()).to.equal("0");
 
-            await Contract.makeAnEpicNFT();
+			await Contract.makeAnEpicNFT();
 
-            const finalBalance = await Contract.balanceOf(owner.address)
-            expect(finalBalance.toString()).to.equal("1")
+			const finalBalance = await Contract.balanceOf(owner.address);
+			expect(finalBalance.toString()).to.equal("1");
 		});
 	});
 });
