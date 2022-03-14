@@ -24,4 +24,14 @@ describe("PomNFT Contract", function () {
 		TestContract = await ethers.getContractFactory("PomNFT");
 		Contract = await TestContract.deploy();
 	});
+
+	describe("Random number", async function () {
+		it("returns a random number", async function () {
+			const presentInArray = firstWords.includes(
+				await Contract.pickRandomFirstWord(1)
+			);
+
+			expect(presentInArray).to.be.true;
+		});
+	});
 });
