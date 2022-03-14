@@ -25,6 +25,13 @@ describe("PomNFT Contract", function () {
 		Contract = await TestContract.deploy();
 	});
 
+	describe("Deployment", async function () {
+		it("should have the correct owner", async function () {
+            console.log('Owner address: ', owner.address)
+            await expect(Contract.owner()).to.equal(owner.address)
+        });
+	});
+
 	describe("Random number", async function () {
 		it("returns a random number", async function () {
 			const presentInArray = firstWords.includes(
@@ -32,6 +39,11 @@ describe("PomNFT Contract", function () {
 			);
 
 			expect(presentInArray).to.be.true;
+		});
+	});
+
+	describe("Mint an Epic NFT", async function () {
+		it("asfasf", async function () {
 		});
 	});
 });
